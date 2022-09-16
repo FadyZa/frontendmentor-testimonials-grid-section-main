@@ -1,0 +1,147 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+body {
+    
+    font-size: 14px;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: hsl(210, 46%, 95%);
+    flex-wrap: wrap;
+}
+
+.container{
+    display: grid;
+    width: 90%;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(2,min-content);
+    grid-template-areas: 
+    "wide1 wide1 small1 long"
+    "small2 wide2 wide2 long"
+    ;
+    gap: 30px;
+    padding: 20px;
+}
+
+article:nth-child(1){
+    grid-area: wide1;
+    background-color:hsl(263, 55%, 52%);
+    color: #fff;
+    background-image: url(/images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: 80% 5px;
+}
+
+article:nth-child(2){
+    grid-area: small1;
+    background-color: hsl(217, 19%, 35%);
+    color: #fff;
+}
+
+article:nth-child(3){
+    grid-area: small2;
+    background-color: hsl(0, 0%, 100%);
+
+}
+
+article:nth-child(4){
+    grid-area: wide2;
+    background-color: hsl(219, 29%, 14%);
+    color: #fff;
+
+}
+
+article:nth-child(5){
+    grid-area: long;
+    background-color: hsl(0, 0%, 100%);
+}
+
+article{
+    padding: 15px;
+    border-radius: 7px;
+    box-shadow: 3px 0 12px 3px rgba(0, 0, 0, 0.395);
+    display: flex;
+    flex-direction: column;
+}
+
+article .info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+article img {
+    width: 30px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    margin-right: 15px;
+}
+
+article h2 {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+article h4 {
+    opacity: 50%;
+}
+
+
+article p:nth-of-type(1){
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+
+article p:nth-of-type(2){
+    font-weight: 500;
+    opacity: 66%;
+    line-height: 1.5;
+}
+
+
+
+@media (max-width:769px){
+    .container{
+        padding: 10px;
+        grid-template-columns: repeat(6,1fr);
+        grid-template-rows: repeat(2,min-content);
+        grid-template-areas: 
+        "wide1 wide1 small1 small1 long long"
+        "small2 small2 wide2 wide2 long long"
+        ;
+    }
+}
+
+
+@media (max-width:768px){
+
+    .container{
+        padding: 5px;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(5,min-content);
+        grid-template-areas: 
+        "wide1 wide1 wide1 wide1"
+        "wide2 wide2 wide2 wide2"
+        "small1 small1 small1 small1"
+        "small2 small2 small2 small2"
+        "long long long long"
+        ;
+    }
+
+}
+
+
+
+
+
+
